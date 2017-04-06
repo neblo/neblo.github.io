@@ -5,7 +5,6 @@
 
 <head ng-controller="metaController">
 
-  <meta property="og:description" content="{{ myApp.metaDescription }}">
   <meta property="og:description" content="{{ description }}">
   <title title-directive></title>
 
@@ -28,6 +27,7 @@
     </div>
   </nav>
 
+  <button ng-click="goGoogle()">GoGoGoogle</button>
   <div id="main">
   
     <!-- angular templating -->
