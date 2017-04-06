@@ -37,3 +37,10 @@
 	myApp.controller('contactController', function($scope) {
 		$scope.message = 'Contact us! JK. This is just a demo.';
 	});
+
+	myApp.directive("titleDirective", function() {
+		return {
+			restrict : "A",
+			template : "Title Goes Here"
+		}
+	});
