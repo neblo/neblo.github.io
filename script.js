@@ -53,3 +53,10 @@
 			template : "Title Goes Here"
 		}
 	});
+
+	myApp.directive("urlDirective", function() {
+		return {
+			restrict : "C",
+			template : "https://amazon.com"
+		}
+	});	
