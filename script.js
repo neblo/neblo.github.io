@@ -30,7 +30,7 @@
 	});
 
 	// create the controller and inject Angular's $scope
-	myApp.controller('mainController', function($scope) {
+	myApp.controller('mainController', function($scope, $location) {
 		// create a message to display in our view
 		$scope.message = 'Everyone come and see how good I look!';
 
