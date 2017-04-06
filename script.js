@@ -16,7 +16,7 @@
 				templateUrl : 'pages/about.html',
 				controller  : 'aboutController'
 			})
-
+			
 			// route for the contact page
 			.when('/contact', {
 				templateUrl : 'pages/contact.html',
@@ -24,7 +24,11 @@
 			});
 	});
 
-	myApp.metaDescription = "This is the description yo";
+	myApp.controller('metaController', function($scope) {
+		// create a message to display in our view
+		$scope.description = 'Everyone come and see how good I look!';
+		myApp.metaDescription = "This is the description yo";
+	});
 
 	// create the controller and inject Angular's $scope
 	myApp.controller('mainController', function($scope) {
