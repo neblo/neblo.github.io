@@ -33,9 +33,9 @@
 	// create the controller and inject Angular's $scope //
 	myApp.controller('mainController', function($scope, $location) {
 		// create a message to display in our view
-		$scope.message = 'Everyone come and see how good I look!';
+		$scope.message = 'Made from organic blugu milk collected daily!';
 		$scope.hometitle = 'Tasty Blugu Butter';
-		$scope.bodytext = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elit odio, scelerisque pharetra hendrerit eu, sagittis at urna. Mauris non tincidunt quam. Nam lacinia dapibus vehicula. Aenean nec nisl vel sapien laoreet lacinia sit amet quis tortor. Etiam aliquam lobortis elit. Nam in laoreet urna. Nunc at est rhoncus nulla porttitor sodales nec et ligula. Integer id condimentum magna. Etiam luctus massa sed ligula lacinia feugiat.\n' +
+		$scope.bodytext = 'Did you realize butter is harvested from tortured baby cows? Well now you can eat the finest butter that is both delicious and hippy approved! Introducing Blugu Butter, the organic alternative that is gluten free! laoreet lacinia sit amet quis tortor. Etiam aliquam lobortis elit. Nam in laoreet urna. Nunc at est rhoncus nulla porttitor sodales nec et ligula. Integer id condimentum magna. Etiam luctus massa sed ligula lacinia feugiat.\n' +
             '\n' +
             'Curabitur dignissim sapien eu rutrum ultrices. Sed ac condimentum enim, vitae gravida purus. In tristique, tortor in lobortis porta, elit metus lobortis velit, eget fringilla est metus eu orci. Integer sed urna tellus. Cras eu arcu libero. Maecenas facilisis, ex eget ultricies blandit, urna dui semper dui, rutrum feugiat magna nulla dictum libero. Vestibulum vestibulum nibh nisi, a consequat nisi iaculis vel. Donec nec magna ut magna posuere pretium. Nam aliquam ac enim a semper. Donec facilisis leo eget velit feugiat, sed tempus massa dapibus. Curabitur sit amet dignissim mi. Proin nec accumsan enim. Duis at ipsum ac risus fermentum tristique. Suspendisse potenti.\n' +
             '\n' +
