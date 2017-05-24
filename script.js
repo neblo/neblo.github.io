@@ -50,7 +50,7 @@
 	myApp.directive("titleDirective", function() {
 		return {
 			restrict : "A",
-			template : "Title Goes Here"
+			template : "Delicious Blugu Butter"
 		}
 	});
 
