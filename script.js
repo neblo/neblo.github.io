@@ -26,7 +26,7 @@
 
 	myApp.controller('metaController', function($scope) {
 		// create a message to display in our view
-		$scope.description = 'This is a super cool site that provides services and flowers.';
+		$scope.description = 'This is js loaded description in regular tags. it is super cool XD';
 	});
 
 
