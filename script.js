@@ -36,6 +36,7 @@
 		$scope.message = 'Made from organic blugu milk collected daily!';
 		$scope.hometitle = 'Tasty Blugu Butter';
 		$scope.bodytext = 'Did you realize butter is harvested from tortured baby cows? Well now you can eat the finest butter that is both delicious and hippy approved! Introducing Blugu Butter, the organic alternative that is gluten free! Spread it on your toast or use it as fishing bait. While it is true many Blugus were killed in the making of this product, it is okay because they are now living in the life stream.\n';
+        $scope.rating = 'Barret Wallace: "Blugu Butter is great! I smother my Chocoburger with it! - 5/5 stars"';
 	});
 
 	myApp.controller('aboutController', function($scope) {
