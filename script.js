@@ -29,7 +29,10 @@
 	myApp.controller('metaController', function($log, $rootScope, $scope, PageService) {
         var app = this;
 
-        PageService.setMetaDescription("Testing 123");
+        activate();
+        function activate() {
+            metaDescriptionWatch();
+        }
 
 		// create a message to display in our view
 		app.metaDescription = 'This is the default description that should never be displayed because it smells like blugu butter.';
@@ -43,12 +46,12 @@
         }
 	});
 
-    myApp.controller('aboutController', function($scope) {
+    myApp.controller('aboutController', function($scope, PageService) {
         $scope.message = 'Look! I am an about page.';
         PageService.setMetaDescription('This is the description for the about page');
     });
 
-    myApp.controller('contactController', function($scope) {
+    myApp.controller('contactController', function($scope, PageService) {
         $scope.message = 'Contact us! JK. This is just a demo.';
         PageService.setMetaDescription('This is the description for the contact us page');
     });
