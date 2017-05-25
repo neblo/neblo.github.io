@@ -26,7 +26,7 @@
         	$locationProvider.html5Mode(true);
 	});
 
-	myApp.controller('metaController', function($log, $rootScope, $scope, PageService) {
+	myApp.controller('MetaController', function($log, $rootScope, $scope, PageService) {
         var app = this;
 
         activate();
