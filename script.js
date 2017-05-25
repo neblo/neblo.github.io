@@ -29,6 +29,8 @@
 	myApp.controller('metaController', function($log, $rootScope, $scope, PageService) {
         var app = this;
 
+        PageService.setMetaDescription("Testing 123");
+
 		// create a message to display in our view
 		app.metaDescription = 'This is the default description that should never be displayed because it smells like blugu butter.';
 
