@@ -26,29 +26,57 @@
         	$locationProvider.html5Mode(true);
 	});
 
-	myApp.controller('metaController', function($scope) {
+	myApp.controller('metaController', function($log, $rootScope, $scope, PageService) {
+        var app = this;
+
 		// create a message to display in our view
-		$scope.description = 'It\'s blue, it\'s tasty, it\'s made from fresh daily squeezed blugus. It\'s Blugu Butter!';
+		app.metaDescription = 'This is the default description that should never be displayed because it smells like blugu butter.';
+
+        function metaDescriptionWatch() {
+            $scope.$watch(function () {
+                return PageService.getMetaDescription();
+            }, function (newMetaDescription) {
+                app.metaDescription = newMetaDescription;
+            });
+        }
 	});
 
+    myApp.controller('aboutController', function($scope) {
+        $scope.message = 'Look! I am an about page.';
+        PageService.setMetaDescription('This is the description for the about page');
+    });
 
-	// create the controller and inject Angular's $scope //
-	myApp.controller('mainController', function($scope, $location) {
+    myApp.controller('contactController', function($scope) {
+        $scope.message = 'Contact us! JK. This is just a demo.';
+        PageService.setMetaDescription('This is the description for the contact us page');
+    });
+
+	myApp.controller('mainController', function($scope, $location, PageService) {
 		// create a message to display in our view
 		$scope.message = 'Made from organic blugu milk collected daily!';
 		$scope.hometitle = 'Tasty Blugu Butter';
 		$scope.bodytext = 'Did you realize butter is harvested from tortured baby cows? Well now you can eat the finest butter that is both delicious and hippy approved! Introducing Blugu Butter, the organic alternative that is gluten free! Spread it on your toast or use it as fishing bait. While it is true many Blugus were killed in the making of this product, it is okay because they are now living in the life stream.\n';
         $scope.rating = 'Barret Wallace: "Blugu Butter is great! I smother my Chocoburger with it! - 5/5 stars"';
+        PageService.setMetaDescription('It\'s blue, it\'s tasty, it\'s made from fresh daily squeezed blugus. It\'s Blugu Butter! ');
 	});
 
-	myApp.controller('aboutController', function($scope) {
-		$scope.message = 'Look! I am an about page.';
-	});
+    myApp.service('PageService', function() {
+        var metaDescription = null;
+        return {
+            getMetaDescription: getMetaDescription,
+            setMetaDescription: setMetaDescription
+        };
 
-	myApp.controller('contactController', function($scope) {
-		$scope.message = 'Contact us! JK. This is just a demo.';
-	});
+        function getMetaDescription() {
+            return metaDescription;
+        }
 
+        function setMetaDescription (description) {
+			metaDescription = description;
+        }
+    });
+
+	// Directives
 	myApp.directive("titleDirective", function() {
 		return {
 			restrict : "A",
@@ -61,4 +89,5 @@
 			restrict : "C",
 			template : "https://amazon.com"
 		}
-	});	
+	});
+
