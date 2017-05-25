@@ -2,7 +2,7 @@
 	var myApp = angular.module('myApp', ['ngRoute']);
 
 	// configure our routes
-	myApp.config(function($routeProvider) {
+	myApp.config(function($routeProvider, $locationProvider) {
 		$routeProvider
 
 			// route for the home page
@@ -22,6 +22,8 @@
 				templateUrl : 'pages/contact.html',
 				controller  : 'contactController'
 			});
+
+        	$locationProvider.html5Mode(true);
 	});
 
 	myApp.controller('metaController', function($scope) {
