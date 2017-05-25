@@ -26,7 +26,7 @@
 
 	myApp.controller('metaController', function($scope) {
 		// create a message to display in our view
-		$scope.description = 'This is js loaded description in regular tags. it is super cool XD';
+		$scope.description = 'It\'s blue, it\'s tasty, it\'s made from fresh daily squeezed blugus. It\'s Blugu Butter!';
 	});
 
 
