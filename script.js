@@ -29,8 +29,11 @@
 	myApp.controller('MetaController', function($log, $rootScope, $scope, PageService) {
         var app = this;
 
-        console.log("start");
-        setTimeout(function(){ activate(); }, 10000);
+        // delay watcher startup
+        setTimeout(function(){
+        	activate();
+        	console.log("Starting Watcher");
+		}, 10000);
 
 
         function activate() {
