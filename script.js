@@ -30,9 +30,9 @@
         var app = this;
 
         console.log("start");
-        setTimeout(function(){ console.log("Done"); }, 10000);
+        setTimeout(function(){ activate(); }, 10000);
 
-        activate();
+
         function activate() {
             metaDescriptionWatch();
         }
