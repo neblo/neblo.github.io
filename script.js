@@ -33,7 +33,7 @@
         setTimeout(function(){
         	activate();
         	console.log("Starting Watcher");
-		}, 10000);
+		}, 1000);
 
 
         function activate() {
