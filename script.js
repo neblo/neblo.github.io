@@ -41,7 +41,7 @@
         }
 
 		// create a message to display in our view
-		app.metaDescription = 'This is the default description that should never be displayed because it smells like blugu butter.';
+		app.metaDescription = 'XXX - This is the default description that should never be displayed - XXX';
 
         function metaDescriptionWatch() {
             $scope.$watch(function () {
