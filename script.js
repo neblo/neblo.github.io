@@ -2,7 +2,7 @@
 	var myApp = angular.module('myApp', ['ngRoute']);
 
 	// configure our routes
-	myApp.config(function($routeProvider, $locationProvider) {
+	myApp.config(function($routeProvider, $stateProvider) {
 		$routeProvider
             .otherwise('/');
 
@@ -34,7 +34,7 @@
             .state('home', {
                 parent: 'app',
                 url: '/',
-                templateUrl: 'pages/about.html',
+                templateUrl: 'pages/home.html',
                 controller: 'mainController'
             })
 
