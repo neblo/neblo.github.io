@@ -30,7 +30,9 @@
                     }
                 },
                 views: {
-
+                    'content': {
+                        templateUrl: 'index.html'
+                    }
                 }
             })
 
