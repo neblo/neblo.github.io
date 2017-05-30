@@ -52,7 +52,7 @@
                 controller: 'contactController'
             });
 
-        	$locationProvider.html5Mode(true);
+        	// $locationProvider.html5Mode(true);
 	});
 
 	myApp.controller('MetaController', function($log, $rootScope, $scope, PageService) {
