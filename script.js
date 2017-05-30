@@ -25,7 +25,7 @@
             .state('app', {
                 abstract: true,
                 resolve: {
-                    jwt: function($stateParams) {
+                    jwt: function() {
                         return "jwt-activated";
                     }
                 }
@@ -52,7 +52,6 @@
                 controller: 'contactController'
             });
 
-        	// $locationProvider.html5Mode(true);
 	});
 
 	myApp.controller('MetaController', function($log, $rootScope, $scope, PageService) {
