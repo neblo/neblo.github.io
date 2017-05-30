@@ -28,18 +28,13 @@
                     jwt: function($stateParams) {
                         return "jwt-activated";
                     }
-                },
-                views: {
-                    'content': {
-                        templateUrl: 'index.html'
-                    }
                 }
             })
 
             .state('home', {
                 parent: 'app',
                 url: '/',
-                templateUrl: 'pages/home.html',
+                templateUrl: 'pages/about.html',
                 controller: 'mainController'
             })
 
