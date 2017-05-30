@@ -30,16 +30,7 @@
                     }
                 },
                 views: {
-                    'header': {
-                        templateUrl: 'views/header/header.html',
-                        controller: 'HeaderController as header'
-                    },
-                    'content': {
-                        templateUrl: 'main.html'
-                    },
-                    'footer': {
-                        templateUrl: 'views/footer/footer.html'
-                    }
+
                 }
             })
 
@@ -90,12 +81,12 @@
 
     myApp.controller('aboutController', function($scope, PageService) {
         $scope.message = 'Look! I am an about page.';
-        PageService.setMetaDescription('This is the description for the about page V1.3');
+        PageService.setMetaDescription('This is the description for the about page V1.4');
     });
 
     myApp.controller('contactController', function($scope, PageService) {
         $scope.message = 'Contact us! JK. This is just a demo.';
-        PageService.setMetaDescription('This is the description for the contact us page V1.3');
+        PageService.setMetaDescription('This is the description for the contact us page V1.4');
     });
 
 	myApp.controller('mainController', function($scope, $location, PageService) {
@@ -104,7 +95,7 @@
 		$scope.hometitle = 'Delish Blugu Butter';
 		$scope.bodytext = 'Did you realize butter is harvested from tortured baby cows? Well now you can eat the finest butter that is both delicious and hippy approved! Introducing Blugu Butter, the organic alternative that is gluten free! Spread it on your toast or use it as fishing bait. While it is true many Blugus were killed in the making of this product, it is okay because they are now living in the life stream.\n';
         $scope.rating = 'Barret Wallace: "Blugu Butter is great! I smother my Chocoburger with it! - 5/5 stars"';
-        PageService.setMetaDescription('It\'s blue, it\'s tasty, it\'s made from fresh daily squeezed blugus. It\'s Blugu Butter! V1.3');
+        PageService.setMetaDescription('It\'s blue, it\'s tasty, it\'s made from fresh daily squeezed blugus. It\'s Blugu Butter! V1.4');
 	});
 
     myApp.service('PageService', function() {
