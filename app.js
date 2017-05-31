@@ -2,7 +2,7 @@ var routerApp = angular.module('routerApp', ['ui.router']);
 
 routerApp.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
-    $urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('/');
 
     $stateProvider
     // HOME STATES AND NESTED VIEWS ========================================
@@ -19,11 +19,11 @@ routerApp.config(function($stateProvider, $urlRouterProvider, $locationProvider)
                     return true;
                 }
             },
-            templateUrl: '/base-template.html',
+            templateUrl: '/base-template.html'
         })
         .state('home', {
             parent: 'app',
-            url: '/home',
+            url: '/',
             templateUrl: '/partial-home.html',
             controller: function($scope, PageService) {
                 PageService.setMetaDescription('Home: It\'s blue, it\'s tasty, it\'s made from fresh daily squeezed blugus. It\'s Blugu Butter! V1.4');
@@ -33,7 +33,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider, $locationProvider)
 
         // nested list with custom controller
         .state('home.list', {
-            url: '/list',
+            url: 'list',
             templateUrl: '/partial-home-list.html',
             controller: function($scope, PageService) {
                 $scope.dogs = ['Bernese', 'Husky', 'Goldendoodle'];
@@ -44,7 +44,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider, $locationProvider)
 
         // nested list with just some random string data
         .state('home.paragraph', {
-            url: '/paragraph',
+            url: 'paragraph',
             template: 'I could sure use a drink right now.',
             controller: function($scope, PageService) {
                 PageService.setMetaDescription('Para: It\'s blue, it\'s tasty, it\'s made from fresh daily squeezed blugus. It\'s Blugu Butter! V1.4');
