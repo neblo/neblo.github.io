@@ -75,12 +75,13 @@ routerApp.controller('metaDescriptionController', function($scope, PageService) 
     $scope.metaDescription = 'Default Description Should Be Replaced';
     $scope.pageTitle = 'Default Title Should Be Replaced';
 
-    activate();
+    setTimeout(function () {
+        activate();
+    }, 10000);
 
     function activate() {
         metaDescriptionWatch();
         pageTitleWatch();
-        doNothing()
     }
 
     function metaDescriptionWatch() {
@@ -98,16 +99,6 @@ routerApp.controller('metaDescriptionController', function($scope, PageService) 
             $scope.pageTitle = newPageTitle;
         });
     }
-
-    function doNothing() {
-        console.log("Chilling");
-        // simulate jwt delay
-        var seconds = 20;
-        var start = +(new Date());
-        while (new Date() - start < seconds*1000);
-        console.log("Finished Delay");
-    }
-
 });
 
 routerApp.controller('scotchController', function($scope, PageService) {
