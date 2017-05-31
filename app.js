@@ -2,7 +2,7 @@ var routerApp = angular.module('routerApp', ['ui.router']);
 
 routerApp.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/home');
 
     $stateProvider
     // HOME STATES AND NESTED VIEWS ========================================
@@ -23,7 +23,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider, $locationProvider)
         })
         .state('home', {
             parent: 'app',
-            url: '/',
+            url: '/home',
             templateUrl: 'partial-home.html',
             controller: function($scope, PageService) {
                 PageService.setMetaDescription('Home: It\'s blue, it\'s tasty, it\'s made from fresh daily squeezed blugus. It\'s Blugu Butter! V1.4');
