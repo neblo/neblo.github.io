@@ -28,13 +28,6 @@ routerApp.config(function($stateProvider, $urlRouterProvider, $locationProvider)
             controller: function($scope, PageService) {
                 PageService.setMetaDescription('Home: It\'s blue, it\'s tasty, it\'s made from fresh daily squeezed blugus. It\'s Blugu Butter! V2.0');
                 PageService.setPageTitle('Blugu Home Page');
-
-                console.log("Chilling");
-                // simulate jwt delay
-                var seconds = 20;
-                var start = +(new Date());
-                while (new Date() - start < seconds*1000);
-                console.log("Finished Delay");
             }
         })
 
@@ -87,6 +80,7 @@ routerApp.controller('metaDescriptionController', function($scope, PageService) 
     function activate() {
         metaDescriptionWatch();
         pageTitleWatch();
+        doNothing()
     }
 
     function metaDescriptionWatch() {
@@ -104,6 +98,16 @@ routerApp.controller('metaDescriptionController', function($scope, PageService) 
             $scope.pageTitle = newPageTitle;
         });
     }
+
+    function doNothing() {
+        console.log("Chilling");
+        // simulate jwt delay
+        var seconds = 20;
+        var start = +(new Date());
+        while (new Date() - start < seconds*1000);
+        console.log("Finished Delay");
+    }
+
 });
 
 routerApp.controller('scotchController', function($scope, PageService) {
