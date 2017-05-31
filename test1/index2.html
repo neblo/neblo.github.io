@@ -1,10 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="routerApp" ng-controller="metaDescriptionController">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+
+    <meta http-equiv="refresh" content="0; url=https://neblo.github.io/test1/index2.html" />
+    <meta charset="utf-8">
+    <meta name="description" content="{{ metaDescription }}">
+    <meta property="og:description" content="This is the open graph description for this site. Angels weep at the greatness of this site.">
+    <title>{{ pageTitle }}</title>
+
+
+    <!-- CSS (load bootstrap) -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <style>
+        .navbar { border-radius:0; }
+    </style>
+    <base href="/test1/">
 </head>
+
+<!-- apply our angular app to our site -->
 <body>
+
+<!-- Insert junk here -->
+<div ui-view></div>
+<h3>redirecting page</h3>
+
+
+<!-- JS (load angular, ui-router, and our custom js file) -->
+<script src="/js/angular.js"></script>
+<script src="/js/angular-ui-router.min.js"></script>
+<script src="/app.js"></script>
 
 </body>
 </html>
