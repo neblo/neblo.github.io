@@ -12,7 +12,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider, $locationProvider)
                 jwt: function() {
                     console.log("Chilling");
                     // simulate jwt delay
-                    var seconds = 1;
+                    var seconds = 2;
                     var start = +(new Date());
                     while (new Date() - start < seconds*1000);
                     console.log("Finished Delay");
