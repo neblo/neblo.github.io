@@ -75,9 +75,7 @@ routerApp.controller('metaDescriptionController', function($scope, PageService) 
     $scope.metaDescription = 'Default Description Should Be Replaced';
     $scope.pageTitle = 'Default Title Should Be Replaced';
 
-    setTimeout(function () {
-        activate();
-    }, 10000);
+    activate();
 
     function activate() {
         metaDescriptionWatch();
