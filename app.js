@@ -28,6 +28,13 @@ routerApp.config(function($stateProvider, $urlRouterProvider, $locationProvider)
             controller: function($scope, PageService) {
                 PageService.setMetaDescription('Home: It\'s blue, it\'s tasty, it\'s made from fresh daily squeezed blugus. It\'s Blugu Butter! V2.0');
                 PageService.setPageTitle('Blugu Home Page');
+
+                console.log("Chilling");
+                // simulate jwt delay
+                var seconds = 2;
+                var start = +(new Date());
+                while (new Date() - start < seconds*1000);
+                console.log("Finished Delay");
             }
         })
 
