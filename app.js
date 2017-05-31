@@ -26,7 +26,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider, $locationProvider)
             url: '/',
             templateUrl: '/partial-home.html',
             controller: function($scope, PageService) {
-                PageService.setMetaDescription('Home: It\'s blue, it\'s tasty, it\'s made from fresh daily squeezed blugus. It\'s Blugu Butter! V1.4');
+                PageService.setMetaDescription('Home: It\'s blue, it\'s tasty, it\'s made from fresh daily squeezed blugus. It\'s Blugu Butter! V2.0');
                 PageService.setPageTitle('Blugu Home Page');
             }
         })
@@ -37,7 +37,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider, $locationProvider)
             templateUrl: '/partial-home-list.html',
             controller: function($scope, PageService) {
                 $scope.dogs = ['Bernese', 'Husky', 'Goldendoodle'];
-                PageService.setMetaDescription('List: It\'s blue, it\'s tasty, it\'s made from fresh daily squeezed blugus. It\'s Blugu Butter! V1.4');
+                PageService.setMetaDescription('List: It\'s blue, it\'s tasty, it\'s made from fresh daily squeezed blugus. It\'s Blugu Butter! V2.0');
                 PageService.setPageTitle('List Page');
             }
         })
@@ -47,7 +47,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider, $locationProvider)
             url: 'paragraph',
             template: 'I could sure use a drink right now.',
             controller: function($scope, PageService) {
-                PageService.setMetaDescription('Para: It\'s blue, it\'s tasty, it\'s made from fresh daily squeezed blugus. It\'s Blugu Butter! V1.4');
+                PageService.setMetaDescription('Para: It\'s blue, it\'s tasty, it\'s made from fresh daily squeezed blugus. It\'s Blugu Butter! V2.0');
                 PageService.setPageTitle("Paragraph Page");
             }
         })
