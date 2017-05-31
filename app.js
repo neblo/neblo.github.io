@@ -19,12 +19,12 @@ routerApp.config(function($stateProvider, $urlRouterProvider, $locationProvider)
                     return true;
                 }
             },
-            templateUrl: 'base-template.html',
+            templateUrl: '/base-template.html',
         })
         .state('home', {
             parent: 'app',
             url: '/home',
-            templateUrl: 'partial-home.html',
+            templateUrl: '/partial-home.html',
             controller: function($scope, PageService) {
                 PageService.setMetaDescription('Home: It\'s blue, it\'s tasty, it\'s made from fresh daily squeezed blugus. It\'s Blugu Butter! V1.4');
                 PageService.setPageTitle('Home Page');
@@ -34,7 +34,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider, $locationProvider)
         // nested list with custom controller
         .state('home.list', {
             url: '/list',
-            templateUrl: 'partial-home-list.html',
+            templateUrl: '/partial-home-list.html',
             controller: function($scope, PageService) {
                 $scope.dogs = ['Bernese', 'Husky', 'Goldendoodle'];
                 PageService.setMetaDescription('List: It\'s blue, it\'s tasty, it\'s made from fresh daily squeezed blugus. It\'s Blugu Butter! V1.4');
@@ -57,10 +57,10 @@ routerApp.config(function($stateProvider, $urlRouterProvider, $locationProvider)
             parent: 'app',
             url: '/about',
             views: {
-                '': { templateUrl: 'partial-about.html' },
+                '': { templateUrl: '/partial-about.html' },
                 'columnOne@about': { template: 'Look I am a column!' },
                 'columnTwo@about': {
-                    templateUrl: 'table-data.html',
+                    templateUrl: '/table-data.html',
                     controller: 'scotchController'
                 }
             }
