@@ -1,12 +1,28 @@
 var routerApp = angular.module('routerApp', ['ui.router']);
 
-routerApp.config(function($stateProvider, $urlRouterProvider) {
+routerApp.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
     // HOME STATES AND NESTED VIEWS ========================================
+        .state('app', {
+            abstract: true,
+            resolve: {
+                jwt: function() {
+                    console.log("Chilling");
+                    // simulate jwt delay
+                    var seconds = 1;
+                    var start = +(new Date());
+                    while (new Date() - start < seconds*1000);
+                    console.log("Finished Delay");
+                    return true;
+                }
+            },
+            templateUrl: 'base-template.html',
+        })
         .state('home', {
+            parent: 'app',
             url: '/',
             templateUrl: 'partial-home.html',
             controller: function($scope, PageService) {
@@ -38,6 +54,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 
         // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
         .state('about', {
+            parent: 'app',
             url: '/about',
             views: {
                 '': { templateUrl: 'partial-about.html' },
@@ -48,6 +65,8 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
                 }
             }
         });
+
+    $locationProvider.html5Mode(true);
 
 });
 
