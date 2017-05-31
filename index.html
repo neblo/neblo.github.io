@@ -1,72 +1,50 @@
-<!doctype html>
-
-<!-- define angular app -->
-<html id="ng-app" ng-app="myApp" ng-controller="MetaController as app" lang="en" xmlns="http://www.w3.org/1999/xhtml">
-
+<!DOCTYPE html>
+<html ng-app="routerApp" ng-controller="metaDescriptionController">
 <head>
 
-  <meta charset="utf-8">
-  <meta name="description" content="{{ app.metaDescription }}">
-  <meta property="og:description" content="This is the open graph description for this site. Angels weep at the greatness of this site.">
-  <title title-directive></title>
-  <base href="/">
+    <meta charset="utf-8">
+    <meta name="description" content="{{ metaDescription }}">
+    <meta property="og:description" content="This is the open graph description for this site. Angels weep at the greatness of this site.">
+    <title></title>
 
-  <!--<script type='application/ld+json'>-->
-    <!--{-->
-      <!--"@context": "http://schema.org",-->
-      <!--"@type": "Organization",-->
-      <!--"name": "Neblo's Blugu Butter Emporium",-->
-      <!--"description": "My rich description is absolute. We sell Blugu Butter!",-->
-      <!--"alternateName": "Neblo's Blugu",-->
-      <!--"url": "https://neblo.github.io",-->
-      <!--"logo": "https://neblo.github.io/logo.png"-->
-    <!--}-->
- <!--</script>-->
+    <!-- CSS (load bootstrap) -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <style>
+        .navbar { border-radius:0; }
+    </style>
+
 </head>
 
-<!-- define angular controller -->
-<body ng-controller="mainController">
+<!-- apply our angular app to our site -->
+<body>
 
-  <nav class="navbar navbar-default">
+    <!-- NAVIGATION -->
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" ui-sref="#">AngularUI Router</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a ui-sref="home">Home</a></li>
+            <li><a ui-sref="about">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
     <div class="container">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="/">Angular Routing Example</a>
-      </div>
-
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-        <li><a href="#about"><i class="fa fa-shield"></i> About</a></li>
-        <li><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li>
-      </ul>
+        <div ui-view></div>
     </div>
-  </nav>
 
-  <div id="main">
-  
-    <!-- angular templating -->
-		<!-- this is where content will be injected -->
-    <p style="text-align:center"><img src="logo.png" style="align-self: center"></p>
-    <div ui-view></div>
-    
-  </div>
-  
-  <footer class="text-center">
-    <p><===========================></p>
-    <p>{{ app.metaDescription }}</p>
-    <p><===========================></p>
-    <!--<img src="4MB.jpg">-->
-    <!--<img src="Arma.jpg">-->
-  </footer>
-  
-  <!-- SCROLLS -->
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+    <div class="text-center">
+        <p>{{ metaDescription }}</p>
+        <p>View the tutorial: <a href="http://scotch.io/tutorials/javascript/angular-routing-using-ui-router" target="_blank">AngularJS Routing using UI-Router</a></p>
+    </div>
 
-  <!-- SPELLS -->
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
 
-  <script src="script.js"></script>
+    <!-- JS (load angular, ui-router, and our custom js file) -->
+    <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+    <script src="app.js"></script>
+
 </body>
 </html>
