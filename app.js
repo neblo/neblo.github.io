@@ -40,7 +40,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider, $locationProvider)
                     // console.log("Finished Delay");
                     //////////////////////////////////
 
-                    PageService.setPageTitle(response.data.title);
+                    //PageService.setPageTitle(response.data.title);
                     PageService.setMetaDescription(response.data.description);
                 });
             }
