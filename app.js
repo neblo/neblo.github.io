@@ -25,7 +25,8 @@ routerApp.config(function($stateProvider, $urlRouterProvider, $locationProvider)
             parent: 'app',
             url: '/',
             templateUrl: '/partial-home.html',
-            controller: function($scope, PageService) {
+            controller: function($scope, PageService, metadataService) {
+                console.log("in controller" + metadataService);
                 PageService.setMetaDescription('Home: It\'s blue, it\'s tasty, it\'s made from fresh daily squeezed blugus. It\'s Blugu Butter! V2.0');
                 PageService.setPageTitle('Blugu Home');
             }
@@ -149,3 +150,11 @@ routerApp.service('PageService', function() {
         pageTitle = title;
     }
 });
+
+routerApp.service('metadataService', function($http) {
+    var url = "https://neblo.github.io/metadata.json";
+    console.log(url);
+    var response = $http.get(url);
+    console.lgo(response);
+    return response;
+})
