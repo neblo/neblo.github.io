@@ -155,6 +155,6 @@ routerApp.service('metadataService', function($http) {
     var url = "https://neblo.github.io/metadata.json";
     console.log(url);
     var response = $http.get(url);
-    console.lgo(response);
+    console.log(response);
     return response;
 })
