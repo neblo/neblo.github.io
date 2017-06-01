@@ -10,12 +10,6 @@ routerApp.config(function($stateProvider, $urlRouterProvider, $locationProvider)
             abstract: true,
             resolve: {
                 jwt: function() {
-                    // console.log("Chilling");
-                    // // simulate jwt delay
-                    // var seconds = 2;
-                    // var start = +(new Date());
-                    // while (new Date() - start < seconds*1000);
-                    // console.log("Finished Delay");
                     return true;
                 }
             },
