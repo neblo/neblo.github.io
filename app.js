@@ -25,8 +25,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider, $locationProvider)
             parent: 'app',
             url: '/',
             templateUrl: '/partial-home.html',
-            controller: function($scope, $http, PageService, metadataService) {
-                console.log("in controller" + metadataService);
+            controller: function($scope, $http, PageService) {
                 PageService.setMetaDescription('Home: It\'s blue, it\'s tasty, it\'s made from fresh daily squeezed blugus. It\'s Blugu Butter! V2.0');
                 PageService.setPageTitle('Blugu Home 1');
 
