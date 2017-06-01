@@ -35,6 +35,8 @@ routerApp.config(function($stateProvider, $urlRouterProvider, $locationProvider)
                 $http.get(url).then( function(response) {
                     $scope.metadata = response.data;
                 });
+                console.log($scope.metadata.title);
+                console.log($scope.metadata);
             }
         })
 
