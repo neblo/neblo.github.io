@@ -38,6 +38,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider, $locationProvider)
                     console.log(response.data.description);
                     // console.log("Finished Delay");
                     //////////////////////////////////
+
                     $scope.metadata = response.data.title;
                     PageService.setMetaDescription(response.data.description);
                     PageService.setPageTitle(response.data.title);
