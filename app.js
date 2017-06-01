@@ -32,9 +32,16 @@ routerApp.config(function($stateProvider, $urlRouterProvider, $locationProvider)
                 var url = "https://neblo.github.io/metadata.json";
 
                 $http.get(url).then( function(response) {
+                    //// extra delay ////
+                    console.log("Chilling");
+                    // simulate extra network delay
+                    var seconds = 5.5;
+                    var start = +(new Date());
+                    while (new Date() - start < seconds*1000);
+                    console.log("Finished Delay");
+                    ////////////////////
                     console.log(response.data);
                     $scope.metadata = response.data;
-                    console.log($scope.metadata);
                 });
             }
         })
