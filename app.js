@@ -26,21 +26,21 @@ routerApp.config(function($stateProvider, $urlRouterProvider, $locationProvider)
             url: '/',
             templateUrl: '/partial-home.html',
             controller: function($scope, $http, PageService) {
-                PageService.setMetaDescription('Home: It\'s blue, it\'s tasty, it\'s made from fresh daily squeezed blugus. It\'s Blugu Butter! V2.0');
-                PageService.setPageTitle('Blugu Home 1');
-
                 // AJAX //
                 var url = "https://neblo.github.io/metadata.json";
                 $http.get(url).then( function(response) {
                     // simulate extra network delay //
-                    console.log("Chilling");
-                    var seconds = 3;
-                    var start = +(new Date());
-                    while (new Date() - start < seconds*1000);
-                    console.log(response.data);
-                    console.log("Finished Delay");
+                    // console.log("Chilling");
+                    // var seconds = 3;
+                    // var start = +(new Date());
+                    // while (new Date() - start < seconds*1000);
+                    console.log(response.data.title);
+                    console.log(response.data.description);
+                    // console.log("Finished Delay");
                     //////////////////////////////////
-                    $scope.metadata = response.data;
+                    $scope.metadata = response.data.title;
+                    PageService.setMetaDescription(response.data.description);
+                    PageService.setPageTitle(response.data.title);
                 });
             }
         })
