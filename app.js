@@ -33,6 +33,8 @@ routerApp.config(function($stateProvider, $urlRouterProvider, $locationProvider)
 
                 $http.get(url).then( function(response) {
                     console.log(response.data);
+                    $scope.description = data;
+                    console.log($scope.description);
                 });
             }
         })
