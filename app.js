@@ -29,18 +29,17 @@ routerApp.config(function($stateProvider, $urlRouterProvider, $locationProvider)
                 PageService.setMetaDescription('Home: It\'s blue, it\'s tasty, it\'s made from fresh daily squeezed blugus. It\'s Blugu Butter! V2.0');
                 PageService.setPageTitle('Blugu Home 1');
 
+                // AJAX //
                 var url = "https://neblo.github.io/metadata.json";
-
                 $http.get(url).then( function(response) {
-                    //// extra delay ////
+                    // simulate extra network delay //
                     console.log("Chilling");
-                    // simulate extra network delay
-                    var seconds = 5.5;
+                    var seconds = 3;
                     var start = +(new Date());
                     while (new Date() - start < seconds*1000);
-                    console.log("Finished Delay");
-                    ////////////////////
                     console.log(response.data);
+                    console.log("Finished Delay");
+                    //////////////////////////////////
                     $scope.metadata = response.data;
                 });
             }
