@@ -32,10 +32,8 @@ routerApp.config(function($stateProvider, $urlRouterProvider, $locationProvider)
                 var url = "https://neblo.github.io/metadata.json";
 
                 $http.get(url).then( function(response) {
-                    $scope.metadata = response.data;
+                    console.log(response.data);
                 });
-                console.log($scope.metadata.title);
-                console.log($scope.metadata);
             }
         })
 
